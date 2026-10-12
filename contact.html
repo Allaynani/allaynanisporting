@@ -1,82 +1,52 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="اتصل بنا - Al Laynani Sporting">
-  <title>اتصل بنا | Al Laynani Sporting</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">ALS</span>
-        <span class="brand-copy">
-          <strong>Al Laynani Sporting</strong>
-          <small>الرياضة أسلوب حياة</small>
-        </span>
-      </a>
-      <a class="nav-cta" href="index.html">الرئيسية</a>
+<main class="section container" style="max-width:850px">
+  <span class="eyebrow">AL LAYNANI SPORTING</span>
+  <h1 style="font-size:38px">اتصل بنا</h1>
+  <p>عندك سؤال أو اقتراح؟ اختر الطريقة التي تناسبك:</p>
+
+  <!-- نموذج Formspree -->
+  <form action="https://formspree.io/f/mbgdazdk" method="POST" style="margin-top:20px">
+    <label>اسمك:</label>
+    <input type="text" name="name" required>
+
+    <label>بريدك الإلكتروني:</label>
+    <input type="email" name="email" required>
+
+    <label>رسالتك:</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <input type="hidden" name="_replyto" value="aalaynani@gmail.com">
+
+    <div id="success-message" style="display:none; margin:15px 0; color:green; font-weight:bold;">
+      شكراً، تم إرسال رسالتك بنجاح ✅
     </div>
-  </header>
 
-  <main class="section container" style="max-width:850px">
-    <span class="eyebrow">AL LAYNANI SPORTING</span>
-    <h1 style="font-size:38px">اتصل بنا</h1>
-    <p>للاستفسارات والاقتراحات، املأ النموذج أدناه:</p>
+    <button type="submit" class="button button-primary">إرسال عبر النموذج</button>
+  </form>
 
-    <!-- نموذج Formspree -->
-    <form action="https://formspree.io/f/mbgdazdk" method="POST" style="margin-top:20px">
-      <label>اسمك:</label>
-      <input type="text" name="name" required>
+  <!-- زر البريد المباشر -->
+  <p style="margin-top:20px">
+    <a href="mailto:aalaynani@gmail.com" class="button button-primary">راسلنا عبر البريد</a>
+  </p>
 
-      <label>بريدك الإلكتروني:</label>
-      <input type="email" name="email" required>
+  <p style="margin-top:30px">
+    <a class="button button-primary" href="index.html">العودة للرئيسية ←</a>
+  </p>
+</main>
 
-      <label>رسالتك:</label>
-      <textarea name="message" rows="5" required></textarea>
+<script>
+  const form = document.querySelector("form");
+  const successMessage = document.getElementById("success-message");
 
-      <!-- هذا الحقل يضمن أن الرسائل تُرسل إلى بريدك الحقيقي -->
-      <input type="hidden" name="_replyto" value="aalaynani@gmail.com">
-
-      <!-- رسالة نجاح بعد الإرسال -->
-      <div id="success-message" style="display:none; margin:15px 0; color:green; font-weight:bold;">
-        شكراً، تم إرسال رسالتك بنجاح ✅
-      </div>
-
-      <button type="submit" class="button button-primary">إرسال</button>
-    </form>
-
-    <p style="margin-top:30px">
-      <a class="button button-primary" href="index.html">العودة للرئيسية ←</a>
-    </p>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-bottom">
-      <span>© Al Laynani Sporting</span>
-      <span>الرياضة أسلوب حياة</span>
-    </div>
-  </footer>
-
-  <!-- سكربت بسيط لإظهار رسالة النجاح -->
-  <script>
-    const form = document.querySelector("form");
-    const successMessage = document.getElementById("success-message");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        successMessage.style.display = "block";
-        form.reset();
-      }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
     });
-  </script>
-</body>
-</html>
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset();
+    }
+  });
+</script>
