@@ -1,1 +1,31 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="اتصل بنا - Al Laynani Sporting"><title>اتصل بنا | Al Laynani Sporting</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><span class="brand-mark">ALS</span><span class="brand-copy"><strong>Al Laynani Sporting</strong><small>الرياضة أسلوب حياة</small></span></a><a class="nav-cta" href="index.html">الرئيسية</a></div></header><main class="section container" style="max-width:850px"><span class="eyebrow">AL LAYNANI SPORTING</span><h1 style="font-size:38px">اتصل بنا</h1><p>للاستفسارات والاقتراحات، أضف بريدك الإلكتروني الحقيقي أو روابط صفحاتك الرسمية أدناه.</p><p><strong>البريد الإلكتروني:</strong> استبدل contact@example.com بعنوانك الفعلي قبل النشر.</p><p><strong>الشبكات الاجتماعية:</strong> أضف روابط حسابات Al Laynani Sporting الرسمية.</p><p style="margin-top:30px"><a class="button button-primary" href="index.html">العودة للرئيسية ←</a></p></main><footer class="site-footer"><div class="container footer-bottom"><span>© Al Laynani Sporting</span><span>الرياضة أسلوب حياة</span></div></footer></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اتصل بنا</title>
+  <style>
+    body { font-family: Tahoma, sans-serif; direction: rtl; }
+    form { max-width: 400px; margin: auto; }
+    input, textarea { width: 100%; margin: 10px 0; padding: 8px; }
+    button { background: green; color: white; padding: 10px; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>راسلنا</h2>
+  <form action="https://formspree.io/f/mbgdazdk" method="POST">
+    <label>اسمك:</label>
+    <input type="text" name="name" required>
+    
+    <label>بريدك الإلكتروني:</label>
+    <input type="email" name="email" required>
+    
+    <label>رسالتك:</label>
+    <textarea name="message" rows="5" required></textarea>
+    
+    <!-- بريدك الذي ستستقبل عليه الرسائل -->
+    <input type="hidden" name="_replyto" value="aalaynani@gmail.com">
+    
+    <button type="submit">إرسال</button>
+  </form>
+</body>
+</html>
